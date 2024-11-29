@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Life Manager</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Student Life Manager</h1>
+            <nav class="main-nav">
+                <button data-view="finance" class="nav-btn active">Finance</button>
+                <button data-view="tasks" class="nav-btn">Tasks</button>
+                <button data-view="goals" class="nav-btn">Goals</button>
+                <button data-view="journal" class="nav-btn">Journal</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- Finance Section -->
+            <section id="finance-view" class="view active">
+                <div class="section-header">
+                    <h2>Pocket Money Manager</h2>
+                    <div class="balance-card">
+                        <h3>Current Balance</h3>
+                        <p id="current-balance">₹0.00</p>
+                    </div>
+                </div>
+                <div class="transaction-form">
+                    <input type="number" id="amount" placeholder="Amount">
+                    <input type="text" id="description" placeholder="Description">
+                    <select id="type">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <button id="add-transaction">Add Transaction</button>
+                </div>
+                <div class="transaction-list">
+                    <h3>Recent Transactions</h3>
+                    <div id="transactions"></div>
+                </div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section id="tasks-view" class="view">
+                <div class="section-header">
+                    <h2>Task Manager</h2>
+                </div>
+                <div class="task-form">
+                    <input type="text" id="task-input" placeholder="New task...">
+                    <input type="date" id="task-due-date">
+                    <select id="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button id="add-task">Add Task</button>
+                </div>
+                <div id="task-list"></div>
+            </section>
+
+            <!-- Goals Section -->
+            <section id="goals-view" class="view">
+                <div class="section-header">
+                    <h2>Goal Tracker</h2>
+                </div>
+                <div class="goal-form">
+                    <input type="text" id="goal-title" placeholder="Goal title">
+                    <textarea id="goal-description" placeholder="Goal description"></textarea>
+                    <input type="date" id="goal-target-date">
+                    <button id="add-goal">Add Goal</button>
+                </div>
+                <div id="goals-list"></div>
+            </section>
+
+            <!-- Journal Section -->
+            <section id="journal-view" class="view">
+                <div class="section-header">
+                    <h2>Daily Journal</h2>
+                </div>
+                <div class="journal-form">
+                    <input type="date" id="entry-date">
+                    <textarea id="journal-entry" placeholder="Write your thoughts..."></textarea>
+                    <button id="save-entry">Save Entry</button>
+                </div>
+                <div id="journal-entries"></div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <button id="export-data">Export Data</button>
+            <button id="import-data">Import Data</button>
+            <button id="generate-report">Generate Report</button>
+        </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
